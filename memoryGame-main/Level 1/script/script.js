@@ -47,7 +47,7 @@ let imagenes = [
 ]
 
 function mix(arreglo) {
-    arreglo.sort(function() {
+    arreglo.sort(() => {
         return Math.random() - 0.5;
     });
 }
@@ -102,8 +102,8 @@ function sameCheck(){
     }
 }
 
-botones.forEach(function(boton) {
-    boton.addEventListener("click", function() {
+botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
         asignarCheck(boton.id, boton.value)
         let valuePid = boton.value
         let boton1 = document.getElementById(valuePid + "a")
