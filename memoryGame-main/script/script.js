@@ -1,8 +1,134 @@
 let botones = document.querySelectorAll(".card");
-let mezclarBotton = document.getElementById("mezclar");
+let mezclar1Botton = document.getElementById("mezclar1");
+let mezclar2Botton = document.getElementById("mezclar2");
+let mezclar3Botton = document.getElementById("mezclar3");
 let sameChecking  = ['n', 'n']
 let combination= ['n', 'n']
-let imagenes = [
+let imagenes1 = [
+    {
+        url : "0",
+        id : "0a",
+        value : "0"
+    },
+    {
+        url : "0",
+        id : "0b",
+        value : "0"
+    },
+    {
+        url : "1",
+        id : "1a",
+        value : "1"
+    },
+    {
+        url : "1",
+        id : "1b",
+        value : "1"
+    },
+    {
+        url : "2",
+        id : "2a",
+        value : "2"
+    },
+    {
+        url : "2",
+        id : "2b",
+        value : "2"
+    },
+    {
+        url : "3",
+        id : "3a",
+        value : "3"
+    },
+    {
+        url : "3",
+        id : "3b",
+        value : "3"
+    }
+]
+let imagenes2 = [
+    {
+        url : "0",
+        id : "0a",
+        value : "0"
+    },
+    {
+        url : "0",
+        id : "0b",
+        value : "0"
+    },
+    {
+        url : "1",
+        id : "1a",
+        value : "1"
+    },
+    {
+        url : "1",
+        id : "1b",
+        value : "1"
+    },
+    {
+        url : "2",
+        id : "2a",
+        value : "2"
+    },
+    {
+        url : "2",
+        id : "2b",
+        value : "2"
+    },
+    {
+        url : "3",
+        id : "3a",
+        value : "3"
+    },
+    {
+        url : "3",
+        id : "3b",
+        value : "3"
+    },
+    {
+        url : "4",
+        id : "4a",
+        value : "4"
+    },
+    {
+        url : "4",
+        id : "4b",
+        value : "4"
+    },
+    {
+        url : "5",
+        id : "5a",
+        value : "5"
+    },
+    {
+        url : "5",
+        id : "5b",
+        value : "5"
+    },
+    {
+        url : "6",
+        id : "6a",
+        value : "6"
+    },
+    {
+        url : "6",
+        id : "6b",
+        value : "6"
+    },
+    {
+        url : "7",
+        id : "7a",
+        value : "7"
+    },
+    {
+        url : "7",
+        id : "7b",
+        value : "7"
+    },
+]
+let imagenes3 = [
     {
         url : "0",
         id : "0a",
@@ -153,7 +279,6 @@ let imagenes = [
         id : "14b",
         value : "14"
     },
-   
 ]
 
 function mix(arreglo) {
@@ -162,10 +287,30 @@ function mix(arreglo) {
     });
 }
 
-mezclarBotton.addEventListener("click", () => {
-    mix(imagenes)
+mezclar1Botton.addEventListener("click", () => {
+    mix(imagenes1)
     botones.forEach(function(boton, i) {
-        let asig = imagenes[i];
+        let asig = imagenes1[i];
+        boton.textContent = asig.url;
+        boton.id = asig.id;
+        boton.value = asig.value;
+    });
+});
+
+mezclar2Botton.addEventListener("click", () => {
+    mix(imagenes1)
+    botones.forEach(function(boton, i) {
+        let asig = imagenes1[i];
+        boton.textContent = asig.url;
+        boton.id = asig.id;
+        boton.value = asig.value;
+    });
+});
+
+mezclar3Botton.addEventListener("click", () => {
+    mix(imagenes1)
+    botones.forEach(function(boton, i) {
+        let asig = imagenes1[i];
         boton.textContent = asig.url;
         boton.id = asig.id;
         boton.value = asig.value;
