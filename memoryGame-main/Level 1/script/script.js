@@ -52,6 +52,12 @@ function mix(arreglo) {
     });
 }
 
+    // Ocultar los valores al mezclar
+    botones.forEach((boton) => {
+        boton.textContent = ""; // Vacía el contenido de las cartas
+        boton.disabled = false; // Asegura que las cartas no estén deshabilitadas
+    });
+
 mezclarBotton.addEventListener("click", () => {
     mix(imagenes)
     botones.forEach(function(boton, i) {
@@ -119,3 +125,39 @@ botones.forEach((boton) => {
     });
 });
 
+//HOLLLLLLLLLA
+function mix(arreglo) {
+    arreglo.sort(() => {
+        return Math.random() - 0.5;
+    });
+    // Ocultar los valores al mezclar
+    botones.forEach((boton) => {
+        boton.textContent = ""; // Vacía el contenido de las cartas
+        boton.disabled = false; // Asegura que las cartas no estén deshabilitadas
+    });
+}
+
+mezclarBotton.addEventListener("click", () => {
+    mix(imagenes);
+});
+
+botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
+        asignarCheck(boton.id, boton.value);
+        let valuePid = boton.value;
+        let boton1 = document.getElementById(valuePid + "a");
+        let boton2 = document.getElementById(valuePid + "b");
+        if (sameCheck()) {
+            if (checkcombination()) {
+                boton1.style.opacity = "0";
+                boton2.style.opacity = "0";
+                boton1.disabled = true;
+                boton2.disabled = true;
+            }
+        } else {
+            // Mostrar el valor al hacer clic
+            boton.textContent = valuePid;
+            boton.disabled = true; // Deshabilitar el botón después de revelar el valor
+        }
+    });
+});
