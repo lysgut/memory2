@@ -104,6 +104,9 @@ function sameCheck(){
         }
         else{
             return true
+                     // Mostrar el valor al hacer clic
+                    boton.textContent = valuePid;
+                    boton.disabled = true; // Deshabilitar el botón después de revelar el valor
         }
     }
 }
